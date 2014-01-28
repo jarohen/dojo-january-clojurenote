@@ -14,7 +14,9 @@
     (include-js "//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js")
     (include-css "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css")
 
-    (include-js "/js/clojurenote.js")]
+    (include-js "/js/clojurenote.js")
+    [:style (str "ul li:first-child button.up {display: none} "
+                 "ul li:last-child button.down {display: none}")]]
    [:body
     [:div#content]
     [:script (repl-connect-js)]]))

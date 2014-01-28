@@ -9,7 +9,8 @@
 (enable-console-print!)
 
 (defn action-button [{:keys [caption events-ch action task]}]
-  (doto (node [:button {:style {:margin "0.4em"}} caption])
+  (doto (node [:button ^:attrs {:style {:margin "0.4em"}
+                                :class (name action)} caption])
     (d/listen! :click
         #(put! events-ch {:action action
                           :task task}))))
